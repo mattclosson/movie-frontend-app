@@ -12,6 +12,7 @@ function SingleMovie(props) {
     const [sortedReview, setSortedReview] = useState(reviews)
 
     const movie = props.movies.find((m) => m.id === id)
+
     const getReviews = async () => {
       const response = await fetch(`${url}movies/${id}/reviews`);
       const data = await response.json()
@@ -62,7 +63,7 @@ function SingleMovie(props) {
                 <button className="sort-btn" onClick={highestSort}>Highest</button>
                 <button className="sort-btn latest" onClick={latestSort}>Latest</button>
             </div>
-            {sortedReview.map(review => <Review body={review.body} review_id={review.id} movie_id={id} rating={review.rating} date={review.created_at} />)}
+            {sortedReview.map(review => <Review key={review.id} body={review.body} review_id={review.id} movie_id={id} rating={review.rating} date={review.created_at} />)}
         </div>
         </>    
     )

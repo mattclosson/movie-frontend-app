@@ -6,9 +6,8 @@ function Review(props) {
     let stars = []
     for(let i = 0; i < props.rating; i++) {
         console.log(props.rating)
-        stars.push(<i class="fas fa-star" key={i}></i>)
+        stars.push(<i className="fas fa-star" key={i}></i>)
     }
-    const date = new Date(props.date)
     const handleSubmit = async () => {
         console.log("submit")
         await fetch(url + props.review_id, {

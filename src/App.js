@@ -18,7 +18,7 @@ function App() {
   }, [])
   return (
     <div className="App">
-      <Link to="/" className="logo"><h1>moviereview</h1></Link>
+      <Link to="/" className="logo"><h1>movie box</h1></Link>
       <Routes>
         <Route path="/" element={<AllMovies movies={movies}/>} />
         <Route path="/:id" element={<SingleMovie movies={movies}/>} />

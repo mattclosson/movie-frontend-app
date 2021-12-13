@@ -47,11 +47,11 @@ function PostReview(props) {
     }
     
     const stars = [
-        <i class="fas fa-star" data-value="1" key="1" onMouseOver={handleHover} onClick={starClickHandler}></i>,
-        <i class="fas fa-star" data-value="2" key="2" onMouseOver={handleHover} onClick={starClickHandler}></i>,
-        <i class="fas fa-star" data-value="3" key="3" onMouseOver={handleHover} onClick={starClickHandler}></i>,
-        <i class="fas fa-star" data-value="4" key="4" onMouseOver={handleHover} onClick={starClickHandler}></i>,
-        <i class="fas fa-star" data-value="5" key="5" onMouseOver={handleHover} onClick={starClickHandler}></i>
+        <i className="fas fa-star" data-value="1" key="1" onMouseOver={handleHover} onClick={starClickHandler}></i>,
+        <i className="fas fa-star" data-value="2" key="2" onMouseOver={handleHover} onClick={starClickHandler}></i>,
+        <i className="fas fa-star" data-value="3" key="3" onMouseOver={handleHover} onClick={starClickHandler}></i>,
+        <i className="fas fa-star" data-value="4" key="4" onMouseOver={handleHover} onClick={starClickHandler}></i>,
+        <i className="fas fa-star" data-value="5" key="5" onMouseOver={handleHover} onClick={starClickHandler}></i>
     ]
 
     return (
