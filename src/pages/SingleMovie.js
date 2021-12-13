@@ -1,6 +1,6 @@
 import { useParams } from "react-router"
-import { useEffect } from "react/cjs/react.development"
-import { useState } from 'react';
+// import { useEffect } from "react/cjs/react.development"
+import { useState, useEffect } from 'react';
 import Review from './../components/Review'
 import PostReview from "../components/PostReview";
 
@@ -13,15 +13,14 @@ function SingleMovie(props) {
 
     const movie = props.movies.find((m) => m.id === id)
 
+    const getReviews = async () => {
+      const response = await fetch(`${url}movies/${id}/reviews`);
+      const data = await response.json()
+      setReviews(data)
+      setSortedReview(data)
+    }
 
     useEffect(() => {
-        const getReviews = async () => {
-          const response = await fetch(`${url}movies/${id}/reviews`);
-          const data = await response.json()
-          setReviews(data)
-          setSortedReview(data)
-        }
-        
         getReviews()
     }, [])
 
