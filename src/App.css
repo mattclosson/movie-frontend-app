@@ -1,38 +1,169 @@
+body {
+  background-color: #15181c;
+}
+
 .App {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.logo h1 {
+  font-family: 'Readex Pro', sans-serif;
   text-align: center;
+  margin-top: 50px;
+  margin-bottom: 70px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search-bar {
+  width: 45%;
+  height: 42px;
+  border: 1px solid #090a0c;
+  margin: 0 auto;
+  display: block;
+  padding-left: 13px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgb(0 0 0);
+  margin-bottom: 30px;
+}
+a {
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  color: #fff;
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.logo {
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+.movies {
+  display: grid;
+  grid-template-columns: 155px 155px 155px 155px;
+  grid-gap: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movie-container {
+  width: 155px;
+  display: block;
+}
+
+.movie-img {
+  width: 100%;
+  height: 225px;
+  border: 1px solid #090a0c;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.movie-img:hover {
+  outline: 4px solid green;
+}
+
+
+.movie-container h1 {
+  color: #fff;
+  text-align: left;
+  font-size: 12px;
+}
+
+.single-movie-header {
+  text-align: left;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 155px 1fr;
+  grid-gap: 40px;
+}
+
+.single-movie-header h1 {
+  margin: 0;
+}
+.single-movie-header img {
+  width: 155px;
+  border: 1px solid #090a0c;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.review {
+  color: #fff;
+  background-color: rgb(0, 0, 0, 0.5);
+  padding: 15px 20px;
+  border-radius: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.review-form input[type="text"]{
+  width: 50%;
+  display: block;
+  border: 0;
+  height: 44px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.form-stars {
+  color: gray;
+  font-size: 20px;
+}
+
+.sort-btn-container {
+  height: 45px;
+}
+
+.sort-btn {
+  float: right;
+  height: 40px;
+  border: 1px solid #000;
+  background-color: #bebebf;
+  display: block;
+  padding: 0 20px;
+}
+
+.sort-btn:hover {
+  background-color: #efefef;
+  cursor: pointer;
+}
+
+.latest {
+  border-radius: 4px 0 0 4px;
+  border-right: 0;
+}
+
+.lowest {
+  border-radius: 0 4px 4px 0;
+  border-left: 0;
+}
+
+.form-stars {
+  display: inline-block;
+}
+
+.review-form button {
+  height: 33px;
+  padding: 0 9px;
+  display: inline-block;
+  margin-left: 20px;
+  background-color: #2929d7;
+  border: 0;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  border: 0;
+  background: none;
+  color: red;
+  font-weight: bold;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 16px;
+  cursor: pointer;
 }
