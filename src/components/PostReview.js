@@ -22,7 +22,7 @@ function PostReview(props) {
           },
           body: JSON.stringify(formData)
         });
-        navigate(`/${params.id}`)
+        navigate(`/movie/${params.id}`)
     }
     const handleChange = (e) => {
         setFormData({...formData, [e.target.name]: e.target.value})

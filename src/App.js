@@ -21,7 +21,7 @@ function App() {
       <Link to="/" className="logo"><h1>movie box</h1></Link>
       <Routes>
         <Route path="/" element={<AllMovies movies={movies}/>} />
-        <Route path="/:id" element={<SingleMovie movies={movies}/>} />
+        <Route path="/movie/:id" element={<SingleMovie movies={movies}/>} />
       </Routes>
     </div>
   );

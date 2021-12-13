@@ -18,7 +18,7 @@ const AllMovies = (props) => {
             />
             <div className="movies">
                 {props.movies.filter(filterMovies).map((movie)=> {
-                    return <Link to={`/${movie.id}`} key={movie.id} className="movie-container">
+                    return <Link to={`/movie/${movie.id}`} key={movie.id} className="movie-container">
                             <img src={movie.poster} alt={movie.title} className="movie-img" />
                             <h1>{movie.title}</h1>
                         </Link>
