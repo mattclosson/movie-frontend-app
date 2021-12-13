@@ -16,8 +16,13 @@ function SingleMovie(props) {
     const getReviews = async () => {
       const response = await fetch(`${url}movies/${id}/reviews`);
       const data = await response.json()
-      setReviews(data)
-      setSortedReview(data)
+      const sortedData = [].concat(data).sort((a,b) => {
+          let DateA = new Date(a.created_at)
+          let DateB = new Date(b.created_at)
+          return DateB - DateA
+      })
+      setReviews(sortedData)
+      setSortedReview(sortedData)
     }
 
     useEffect(() => {

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 function PostReview(props) {
     const url = "https://mc-movie-app.herokuapp.com/"
     const navigate = useNavigate()
+    // const history = useHistory()
     const params = props.params
 
     // console.log(params.id)
@@ -22,7 +23,11 @@ function PostReview(props) {
           },
           body: JSON.stringify(formData)
         });
-        navigate(`/movie/${params.id}`)
+        const selectForm = e.target.parentElement.getElementsByClassName("review-form")
+        const reviewSuccess = e.target.parentElement.getElementsByClassName("review-success")
+        console.log(reviewSuccess)
+        selectForm[0].style.display = 'none'
+        reviewSuccess[0].style.display = 'block'
     }
     const handleChange = (e) => {
         setFormData({...formData, [e.target.name]: e.target.value})
@@ -55,11 +60,14 @@ function PostReview(props) {
     ]
 
     return (
+        <>
+        <div className="review-success">Review Posted</div>
         <form className="review-form" onSubmit={handleSubmit}>
             <input type="text" name="body" placeholder="Leave a Review" value={formData.body} onChange={handleChange} />
             <div className="form-stars">{stars.map(star => star)}</div>
             <button type="submit">Submit</button>
         </form>
+        </>
     )
 }
 
