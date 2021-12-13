@@ -13,14 +13,15 @@ function SingleMovie(props) {
 
     const movie = props.movies.find((m) => m.id === id)
 
-    const getReviews = async () => {
-      const response = await fetch(`${url}movies/${id}/reviews`);
-      const data = await response.json()
-      setReviews(data)
-      setSortedReview(data)
-    }
 
     useEffect(() => {
+        const getReviews = async () => {
+          const response = await fetch(`${url}movies/${id}/reviews`);
+          const data = await response.json()
+          setReviews(data)
+          setSortedReview(data)
+        }
+        
         getReviews()
     }, [])
 
